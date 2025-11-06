@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Company Name - Cash for Cars!</title>
+
+    <!-- Main layout CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <script src="js/faq.js"></script>
+
+
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Company Name</h1>
+                <div class="tagline">Cash for Cars!</div>
+            </div>
+            <div class="contact-info">
+                <div class="phone">Call: <a href="tel:+12796751575">279-675-1575</a></div>
+                <div class="location">Sacramento, CA</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#sell">Sell Your Car</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#sell">Get an Offer</a></li>
+                    <li><a href="#pickup">Free Pickup</a></li>
+                    <li><a href="#paperwork">Paperwork Help</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="sidebar-cta">
+                    <strong>Call now:</strong>
+                    <a href="tel:+12796751575">279-675-1575</a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content" id="home">
+            <section class="hero">
+                <h2>We Buy Cars in Sacramento — Fast, Fair, Local</h2>
+                <p>Top dollar cash offers, free pickup, and simple paperwork assistance. Get a quote in minutes.</p>
+                <a class="btn" href="#contact">Get an Offer</a>
+            </section>
+
+            <section id="how" class="panel">
+                <h3>How It Works</h3>
+                <ol>
+                    <li>Tell us about your vehicle in the form below.</li>
+                    <li>We give you a cash offer.</li>
+                    <li>Schedule pickup and get paid — same day in many cases.</li>
+                </ol>
+            </section>
+
+            <section id="sell" class="panel">
+                <h3>Sell Your Car</h3>
+                <p>Fill the contact form and we'll be in touch with an offer.</p>
+            </section>
+
+            <section id="contact" class="panel contact-panel">
+                <h3>Contact / Quote Form</h3>
+                <form id="contact-form" autocomplete="on" novalidate>
+                    <div class="form-row">
+                        <label for="name">Your name</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" required />
+                    </div>
+
+                    <fieldset class="form-row">
+                        <legend>Do you have paperwork for the car?</legend>
+                        <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="paperwork" value="no" /> No</label>
+                        <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>
+                    </fieldset>
+
+                    <fieldset class="form-row">
+                        <legend>Do you have keys for the car?</legend>
+                        <label><input type="radio" name="keys" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="keys" value="no" /> No</label>
+                        <label><input type="radio" name="keys" value="not sure" /> Not sure</label>
+                    </fieldset>
+
+                    <div class="form-row">
+                        <label for="zipcode">What Zipcode are you in?</label>
+                        <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required
+                            placeholder="e.g. 95814" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="vehicle_type">What type of vehicle is it?</label>
+                        <select id="vehicle_type" name="vehicle_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="Car">Car</option>
+                            <option value="Van">Van</option>
+                            <option value="Truck">Truck</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="notes">Additional notes</label>
+                        <textarea id="notes" name="notes" rows="4"
+                            placeholder="Condition, mileage, location details..."></textarea>
+                    </div>
+
+                    <input type="hidden" id="source" name="source" value="website" />
+
+                    <div class="form-row actions">
+                        <button type="submit" class="btn primary">Send Request</button>
+                        <button type="button" id="clearBtn" class="btn ghost">Clear</button>
+                    </div>
+
+                    <div id="form-message" class="form-message" aria-live="polite"></div>
+                </form>
+            </section>
+
+            <section id="faq" class="panel">
+                <h3>FAQ</h3>
+                <p>Common questions answered — paperwork, pickup, and payments.</p>
+
+                <div class="accordion">
+                    <button class="accordion-btn">How does the cash for cars process work?</button>
+                    <div class="accordion-content">
+                        <p>It’s simple — give us some details about your vehicle, we make an offer, and if you accept,
+                            we schedule a
+                            pickup and pay you on the spot. No hidden fees or waiting periods.</p>
+                    </div>
+
+                    <button class="accordion-btn">How do I get a quote for my car?</button>
+                    <div class="accordion-content">
+                        <p>You can request a quote online or by phone. We’ll ask for basic details like make, model,
+                            year, mileage,
+                            and condition. Quotes are fast and free.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do I need to have the title to sell my car?</button>
+                    <div class="accordion-content">
+                        <p>In most cases, yes. If you’ve lost your title, we can still help and guide you through
+                            replacement based
+                            on your state’s DMV rules.</p>
+                    </div>
+
+                    <button class="accordion-btn">How soon can you pick up my car?</button>
+                    <div class="accordion-content">
+                        <p>Pickup is usually within 24 hours. Same-day pickup may be available depending on your
+                            location and
+                            vehicle type.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do I have to pay for towing?</button>
+                    <div class="accordion-content">
+                        <p>No, towing is always free. Our driver will come to your location at no cost to you.</p>
+                    </div>
+
+                    <button class="accordion-btn">When will I get paid?</button>
+                    <div class="accordion-content">
+                        <p>You’ll get paid on the spot at pickup — either in cash or by check, depending on your
+                            preference and
+                            local regulations.</p>
+                    </div>
+
+                    <button class="accordion-btn">What types of vehicles do you buy?</button>
+                    <div class="accordion-content">
+                        <p>We buy all kinds of vehicles — cars, trucks, SUVs, vans, and motorcycles. Running or not,
+                            wrecked,
+                            totaled, or old, we’ll make an offer.</p>
+                    </div>
+
+                    <button class="accordion-btn">Will you buy a car that doesn’t run?</button>
+                    <div class="accordion-content">
+                        <p>Yes! We purchase non-running and damaged cars every day and pay cash based on parts and scrap
+                            value.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I sell my car if it has a loan or lien on it?</button>
+                    <div class="accordion-content">
+                        <p>We can help. If there’s a lien, we’ll contact your lender to arrange a payoff. Sale amount
+                            must cover the
+                            remaining balance.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do I need to clean my car before pickup?</button>
+                    <div class="accordion-content">
+                        <p>No, just remove personal items. We buy cars in all conditions.</p>
+                    </div>
+
+                    <button class="accordion-btn">What documents do I need?</button>
+                    <div class="accordion-content">
+                        <p>Usually, vehicle title, valid ID, and registration (if available). Requirements vary by
+                            state.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I sell my car without registration?</button>
+                    <div class="accordion-content">
+                        <p>Yes, as long as you can prove ownership. Title is typically enough.</p>
+                    </div>
+
+                    <button class="accordion-btn">What if my car has been in an accident or is totaled?</button>
+                    <div class="accordion-content">
+                        <p>No problem — we buy accident-damaged and totaled cars all the time.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I sell multiple cars at once?</button>
+                    <div class="accordion-content">
+                        <p>Absolutely. We buy single vehicles and fleets. Let us know how many and we can arrange a bulk
+                            pickup.</p>
+                    </div>
+
+                    <button class="accordion-btn">What happens to my car after I sell it?</button>
+                    <div class="accordion-content">
+                        <p>Depending on its condition, it may be refurbished, resold, dismantled for parts, or recycled
+                            responsibly.
+                        </p>
+                    </div>
+
+                    <button class="accordion-btn">Do you buy vehicles with missing parts?</button>
+                    <div class="accordion-content">
+                        <p>Yes. Missing parts may affect the offer but we still buy the vehicle.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I cancel my pickup appointment?</button>
+                    <div class="accordion-content">
+                        <p>Yes, but please give us notice so we can update our schedule.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you buy cars with expired registration or inspection?</button>
+                    <div class="accordion-content">
+                        <p>Yes. As long as you have ownership documents, expired registration isn’t an issue.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I sell my car on behalf of someone else?</button>
+                    <div class="accordion-content">
+                        <p>You can, with legal authorization such as a power of attorney or proof of co-ownership.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you buy cars from out of state?</button>
+                    <div class="accordion-content">
+                        <p>Yes. We can arrange transport or pickup within our service area.</p>
+                    </div>
+
+                    <button class="accordion-btn">What if I still owe money on my car?</button>
+                    <div class="accordion-content">
+                        <p>If value exceeds the loan, we pay off the lender and give you the balance. Otherwise, you
+                            cover the
+                            difference.</p>
+                    </div>
+
+                    <button class="accordion-btn">How do you determine the value of my car?</button>
+                    <div class="accordion-content">
+                        <p>We consider make, model, year, mileage, condition, market demand, and scrap value to ensure
+                            fair offers.
+                        </p>
+                    </div>
+
+                    <button class="accordion-btn">Can you pick up my car if I’m not home?</button>
+                    <div class="accordion-content">
+                        <p>Usually no — someone must sign paperwork and hand over the keys, but exceptions can be
+                            arranged.</p>
+                    </div>
+
+                    <button class="accordion-btn">Is there any obligation after getting a quote?</button>
+                    <div class="accordion-content">
+                        <p>No. Getting a quote is free and comes with no obligation to sell.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you handle commercial vehicles or company fleets?</button>
+                    <div class="accordion-content">
+                        <p>Yes, we work with businesses of all sizes and can purchase multiple vehicles quickly.</p>
+                    </div>
+
+                    <button class="accordion-btn">Will my personal information be kept private?</button>
+                    <div class="accordion-content">
+                        <p>Absolutely. We only use your information for processing your sale.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you buy classic or antique cars?</button>
+                    <div class="accordion-content">
+                        <p>Yes, older or collectible vehicles are assessed individually for fair value.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can I sell my car if it has a salvage or rebuilt title?</button>
+                    <div class="accordion-content">
+                        <p>Yes, we buy vehicles with salvage or rebuilt titles based on condition.</p>
+                    </div>
+
+                    <button class="accordion-btn">What if my name isn’t on the title?</button>
+                    <div class="accordion-content">
+                        <p>Legal owner must be present or transfer title first. We can guide you through it.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you buy RVs, trailers, or boats?</button>
+                    <div class="accordion-content">
+                        <p>In some areas, yes. Contact us to see if we purchase recreational vehicles near you.</p>
+                    </div>
+
+                    <button class="accordion-btn">Can you pick up cars from apartment complexes or parking
+                        garages?</button>
+                    <div class="accordion-content">
+                        <p>Yes, as long as the tow truck can safely access the vehicle.</p>
+                    </div>
+
+                    <button class="accordion-btn">What if I lost my car keys?</button>
+                    <div class="accordion-content">
+                        <p>No problem — let us know in advance so the driver can bring the right equipment.</p>
+                    </div>
+
+                    <button class="accordion-btn">What happens if my car fails to start at pickup?</button>
+                    <div class="accordion-content">
+                        <p>No issue — our tow trucks can handle non-starting or immobilized vehicles.</p>
+                    </div>
+
+                    <button class="accordion-btn">Do you charge any hidden fees?</button>
+                    <div class="accordion-content">
+                        <p>Never. The offer includes towing, paperwork, and payment. What you’re quoted is what you
+                            receive.</p>
+                    </div>
+
+                    <!-- You can continue adding all other questions in the same format -->
+                    <!-- <button class="accordion-btn">Question goes here</button>
+                                        <div class="accordion-content">
+                                            <p>Informative text goes here.</p>
+                                        </div> -->
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>&copy; <span id="year"></span> Company Name - Cash for Cars!</div>
+            <div>Phone: <a href="tel:+12796751575">279-675-1575</a></div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

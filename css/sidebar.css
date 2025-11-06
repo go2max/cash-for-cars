@@ -1,0 +1,46 @@
+/* ===============================
+   Sidebar Styles
+================================ */
+.sidebar-inner {
+  background: #ffffffee;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 110px;
+}
+
+.sidebar-inner h2 {
+  margin-top: 0;
+  color: #2a7a2e;
+}
+
+.sidebar-inner ul {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px 0;
+}
+
+.sidebar-inner li {
+  margin-bottom: 8px;
+}
+
+.sidebar-inner a {
+  color: #3b9a40;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.sidebar-inner a:hover {
+  color: #2a7a2e;
+}
+
+.sidebar-cta {
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(90deg, rgba(59,154,64,0.08), rgba(59,154,64,0.03));
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+}

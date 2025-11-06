@@ -1,0 +1,36 @@
+/* ===============================
+   Navbar Styles
+================================ */
+.main-nav {
+  position: sticky;
+  top: 70px; /* just under header */
+  z-index: 999;
+  background: #3b9a40;
+  margin: 0;
+  padding: 0.6rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.25s, color 0.25s;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #c8ffc8;
+}
