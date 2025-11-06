@@ -44,3 +44,11 @@
   text-align: center;
   font-weight: bold;
 }
+
+.sidebar-icon {
+    width: auto;
+    height: 150px;
+    color: #4CAF50; /* nice green */
+    border-radius: 20px; /* rounds the corners */
+    object-fit: cover; /* ensures the image scales nicely */
+}
