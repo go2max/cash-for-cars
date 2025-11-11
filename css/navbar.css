@@ -1,36 +1,58 @@
 /* ===============================
-   Navbar Styles
+   Navbar Styles (Sticky & Refined)
 ================================ */
 .main-nav {
   position: sticky;
-  top: 70px; /* just under header */
+  top: 64px; /* adjust to match your header height */
   z-index: 999;
   background: #3b9a40;
+  padding: 0.7rem 0;
   margin: 0;
-  padding: 0.6rem 0;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
+/* Container for navigation links */
 .main-nav ul {
-  list-style: none;
   display: flex;
-  gap: 2rem;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
+/* Link styling */
 .main-nav a {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
-  padding: 8px 12px;
+  padding: 8px 14px;
   border-radius: 6px;
-  transition: background-color 0.25s, color 0.25s;
+  transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 .main-nav a:hover,
 .main-nav a:focus {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #c8ffc8;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #eaffea;
+}
+
+/* Optional: subtle underline for current page */
+.main-nav a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.95rem;
+    padding: 8px 10px;
+  }
 }
