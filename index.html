@@ -17,7 +17,7 @@
     <title>We Buy - Cash for Cars!</title>
 
     <!-- Main layout CSS -->
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/main.css?v=1.0" />
     <!-- Component CSS -->
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/navbar.css" />
@@ -53,12 +53,7 @@
     <div class="layout">
         <aside class="sidebar">
             <div class="sidebar-inner">
-                <!-- <img src="images/cashforcars.png" alt="Cash for cars Icon" class="sidebar-icon" /> -->
-                <!-- <img src="images/1000000282.jpg" alt="Cash for cars Icon" class="sidebar-icon" /> -->
                 <img src="images/1000000286.png" alt="Cash for cars Icon" class="sidebar-icon" />
-                <!-- <img src="images/1000000334.jpg" alt="Cash for cars Icon" class="sidebar-icon" /> -->
-                <!-- <img src="images/1000000403.jpg" alt=" Cash for cars Icon" class="sidebar-icon" /> -->
-
                 <h2>Quick Links</h2>
                 <ul>
                     <li><a href="#sell">Get an Offer</a></li>
@@ -70,7 +65,7 @@
                     <strong>Call now:</strong>
                     <a href="tel:+12796751575">279-675-1575</a>
                 </div>
-                <!-- </div> -->
+            </div>
         </aside>
 
         <main class="content" id="home">
@@ -97,73 +92,74 @@
                 <p>Fill the contact form and we'll be in touch with an offer.</p>
             </section>
 
-            <!--<section id="contact" class="panel contact-panel">-->
-            <!--    <h3>Contact / Quote Form</h3>-->
-            <!--    <form id="contact-form" autocomplete="on" novalidate>-->
-            <!--        <div class="form-row">-->
-            <!--            <label for="name">Your name</label>-->
-            <!--            <input id="name" name="name" type="text" required />-->
-            <!--        </div>-->
+            <section id="contact" class="panel contact-panel">
+                <h3>Contact / Quote Form</h3>
+                <form id="contact-form" autocomplete="on" novalidate>
+                    <div class="form-row">
+                        <label for="name">Your name</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
 
-            <!--        <div class="form-row">-->
-            <!--            <label for="email">Email</label>-->
-            <!--            <input id="email" name="email" type="email" required />-->
-            <!--        </div>-->
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
 
-            <!--        <div class="form-row">-->
-            <!--            <label for="phone">Phone</label>-->
-            <!--            <input id="phone" name="phone" type="tel" required />-->
-            <!--        </div>-->
+                    <div class="form-row">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" required />
+                    </div>
 
-            <!--        <fieldset class="form-row">-->
-            <!--            <legend>Do you have paperwork for the car?</legend>-->
-            <!--            <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>-->
-            <!--            <label><input type="radio" name="paperwork" value="no" /> No</label>-->
-            <!--            <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>-->
-            <!--        </fieldset>-->
+                    <fieldset class="form-row">
+                        <legend>Do you have paperwork for the car?</legend>
+                        <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="paperwork" value="no" /> No</label>
+                        <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>
+                    </fieldset>
 
-            <!--        <fieldset class="form-row">-->
-            <!--            <legend>Do you have keys for the car?</legend>-->
-            <!--            <label><input type="radio" name="keys" value="yes" required /> Yes</label>-->
-            <!--            <label><input type="radio" name="keys" value="no" /> No</label>-->
-            <!--            <label><input type="radio" name="keys" value="not sure" /> Not sure</label>-->
-            <!--        </fieldset>-->
+                    <fieldset class="form-row">
+                        <legend>Do you have keys for the car?</legend>
+                        <label><input type="radio" name="keys" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="keys" value="no" /> No</label>
+                        <label><input type="radio" name="keys" value="not sure" /> Not sure</label>
+                    </fieldset>
 
-            <!--        <div class="form-row">-->
-            <!--            <label for="zipcode">What Zipcode are you in?</label>-->
-            <!--            <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required-->
-            <!--                placeholder="e.g. 95814" />-->
-            <!--        </div>-->
+                    <div class="form-row">
+                        <label for="zipcode">What Zipcode are you in?</label>
+                        <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required
+                            placeholder="e.g. 95814" />
+                    </div>
 
-            <!--        <div class="form-row">-->
-            <!--            <label for="vehicle_type">What type of vehicle is it?</label>-->
-            <!--            <select id="vehicle_type" name="vehicle_type" required>-->
-            <!--                <option value="">-- Select --</option>-->
-            <!--                <option value="Car">Car</option>-->
-            <!--                <option value="Van">Van</option>-->
-            <!--                <option value="Truck">Truck</option>-->
-            <!--                <option value="SUV">SUV</option>-->
-            <!--                <option value="Motorcycle">Motorcycle</option>-->
-            <!--                <option value="Other">Other</option>-->
-            <!--            </select>-->
-            <!--        </div>-->
+                    <div class="form-row">
+                        <label for="vehicle_type">What type of vehicle is it?</label>
+                        <select id="vehicle_type" name="vehicle_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="Car">Car</option>
+                            <option value="Van">Van</option>
+                            <option value="Truck">Truck</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
 
-            <!--        <div class="form-row">-->
-            <!--            <label for="notes">Additional notes</label>-->
-            <!--            <textarea id="notes" name="notes" rows="4"-->
-            <!--                placeholder="Condition, mileage, location details..."></textarea>-->
-            <!--        </div>-->
+                    <div class="form-row">
+                        <label for="notes">Additional notes</label>
+                        <textarea id="notes" name="notes" rows="4"
+                            placeholder="Condition, mileage, location details..."></textarea>
+                    </div>
 
-            <!--        <input type="hidden" id="source" name="source" value="website" />-->
+                    <input type="hidden" id="source" name="source" value="website" />
 
-            <!--        <div class="form-row actions">-->
-            <!--            <button type="submit" class="btn primary">Send Request</button>-->
-            <!--            <button type="button" id="clearBtn" class="btn ghost">Clear</button>-->
-            <!--        </div>-->
+                    <div class="form-row actions">
+                        <button type="submit" class="btn primary">Send Request</button>
+                        <button type="button" id="clearBtn" class="btn ghost">Clear</button>
+                    </div>
 
-            <!--        <div id="form-message" class="form-message" aria-live="polite"></div>-->
-            <!--    </form>-->
-            <!--</section>-->
+                    <div id="form-message" class="form-message" aria-live="polite"></div>
+                </form>
+            </section>
+
 
             <section id="faq" class="panel">
                 <h3>FAQ</h3>
@@ -386,6 +382,8 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="js/email.js"></script>
+
 </body>
 
 </html>
