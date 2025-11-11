@@ -8,7 +8,6 @@
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'G-7D8R0SJ1WY');
     </script>
 
@@ -17,14 +16,12 @@
     <title>We Buy - Cash for Cars!</title>
 
     <!-- Main layout CSS -->
-    <link rel="stylesheet" href="css/main.css?v=1.1" />
+    <link rel="stylesheet" href="css/main.css?v=1.2" />
     <!-- Component CSS -->
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/sidebar.css" />
     <script src="js/faq.js"></script>
-
-
 </head>
 
 <body>
@@ -82,7 +79,6 @@
                 <ol>
                     <li>Give us a call and tell us about your vehicle (279) 675-1575</li>
                     <li>Send us an email to Support@NorCalCashForCars.com</li>
-                    <!--<li>Tell us about your vehicle in the form below.</li>-->
                     <li>We give you a cash offer.</li>
                     <li>Schedule pickup and get paid — same day in many cases.</li>
                 </ol>
@@ -91,47 +87,51 @@
             <section id="sell" class="panel">
                 <h3>Sell Your Car</h3>
                 <p>Fill the contact form and we'll be in touch with an offer.</p>
-            </section>
 
-            <!-- <section id="contact" class="panel contact-panel">
-                <h3>Contact / Quote Form</h3>
-
-                <form id="contact-form" action="php/mailphp" method="POST" autocomplete="on" novalidate>
+                <!-- Contact Form -->
+                <form id="contact-form" action="php/mail.php" method="POST" autocomplete="on" novalidate>
+                    <!-- Name -->
                     <div class="form-row">
                         <label for="name">Your name</label>
                         <input id="name" name="name" type="text" required />
                     </div>
 
+                    <!-- Email -->
                     <div class="form-row">
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" required />
                     </div>
 
+                    <!-- Phone -->
                     <div class="form-row">
                         <label for="phone">Phone</label>
                         <input id="phone" name="phone" type="tel" required />
                     </div>
 
-                    <fieldset class="form-row">
+                    <!-- Paperwork -->
+                    <fieldset>
                         <legend>Do you have paperwork for the car?</legend>
                         <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>
                         <label><input type="radio" name="paperwork" value="no" /> No</label>
                         <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>
                     </fieldset>
 
-                    <fieldset class="form-row">
+                    <!-- Keys -->
+                    <fieldset>
                         <legend>Do you have keys for the car?</legend>
                         <label><input type="radio" name="keys" value="yes" required /> Yes</label>
                         <label><input type="radio" name="keys" value="no" /> No</label>
                         <label><input type="radio" name="keys" value="not sure" /> Not sure</label>
                     </fieldset>
 
+                    <!-- Zipcode -->
                     <div class="form-row">
                         <label for="zipcode">What Zipcode are you in?</label>
                         <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required
                             placeholder="e.g. 95814" />
                     </div>
 
+                    <!-- Vehicle Type -->
                     <div class="form-row">
                         <label for="vehicle_type">What type of vehicle is it?</label>
                         <select id="vehicle_type" name="vehicle_type" required>
@@ -145,6 +145,7 @@
                         </select>
                     </div>
 
+                    <!-- Notes -->
                     <div class="form-row">
                         <label for="notes">Additional notes</label>
                         <textarea id="notes" name="notes" rows="4"
@@ -153,17 +154,18 @@
 
                     <input type="hidden" id="source" name="source" value="website" />
 
-                    <div class="form-row actions">
+                    <!-- Actions -->
+                    <div class="form-row">
                         <button type="submit" class="btn primary">Send Request</button>
                         <button type="button" id="clearBtn" class="btn ghost">Clear</button>
                     </div>
 
+                    <!-- Message -->
                     <div id="form-message" class="form-message" aria-live="polite"></div>
                 </form>
-            </section> -->
+            </section>
 
-
-
+            <!-- FAQ Section -->
             <section id="faq" class="panel">
                 <h3>FAQ</h3>
                 <p>Common questions answered — paperwork, pickup, and payments.</p>
@@ -367,13 +369,12 @@
 
                     <!-- You can continue adding all other questions in the same format -->
                     <!-- <button class="accordion-btn">Question goes here</button>
-                                        <div class="accordion-content">
-                                            <p>Informative text goes here.</p>
-                                        </div> -->
+                                                    <div class="accordion-content">
+                                                        <p>Informative text goes here.</p>
+                                                    </div> -->
 
                 </div>
             </section>
-
         </main>
     </div>
 
@@ -385,8 +386,44 @@
     </footer>
 
     <script src="js/app.js"></script>
-    <script src="js/email.js"></script>
 
+    <script>
+        // Form submission via AJAX
+        const form = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent default form submit
+
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.text())
+                .then(data => {
+                    formMessage.textContent = data;
+                    formMessage.classList.remove('error');
+                    form.reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    formMessage.textContent = 'There was an error submitting the form. Please try again.';
+                    formMessage.classList.add('error');
+                });
+        });
+
+        // Clear button
+        document.getElementById('clearBtn').addEventListener('click', function () {
+            form.reset();
+            formMessage.textContent = '';
+            formMessage.classList.remove('error');
+        });
+
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 
 </html>
