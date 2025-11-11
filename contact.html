@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact / Quote Form - NorCal Cash for Cars</title>
+
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        /* Minimal inline styling for testing */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+
+        .form-row {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.5rem;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        .form-message {
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            margin-right: 0.5rem;
+        }
+
+        .btn.primary {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+
+        .btn.ghost {
+            background-color: transparent;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Contact / Quote Form</h2>
+
+    <form id="contact-form" action="php/mail.php" method="POST" autocomplete="on" novalidate>
+
+        <!-- Name -->
+        <div class="form-row">
+            <label for="name">Your name</label>
+            <input id="name" name="name" type="text" required />
+        </div>
+
+        <!-- Email -->
+        <div class="form-row">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required />
+        </div>
+
+        <!-- Phone -->
+        <div class="form-row">
+            <label for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" required />
+        </div>
+
+        <!-- Paperwork -->
+        <fieldset>
+            <legend>Do you have paperwork for the car?</legend>
+            <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>
+            <label><input type="radio" name="paperwork" value="no" /> No</label>
+            <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>
+        </fieldset>
+
+        <!-- Keys -->
+        <fieldset>
+            <legend>Do you have keys for the car?</legend>
+            <label><input type="radio" name="keys" value="yes" required /> Yes</label>
+            <label><input type="radio" name="keys" value="no" /> No</label>
+            <label><input type="radio" name="keys" value="not sure" /> Not sure</label>
+        </fieldset>
+
+        <!-- Zipcode -->
+        <div class="form-row">
+            <label for="zipcode">What Zipcode are you in?</label>
+            <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required
+                placeholder="e.g. 95814" />
+        </div>
+
+        <!-- Vehicle Type -->
+        <div class="form-row">
+            <label for="vehicle_type">What type of vehicle is it?</label>
+            <select id="vehicle_type" name="vehicle_type" required>
+                <option value="">-- Select --</option>
+                <option value="Car">Car</option>
+                <option value="Van">Van</option>
+                <option value="Truck">Truck</option>
+                <option value="SUV">SUV</option>
+                <option value="Motorcycle">Motorcycle</option>
+                <option value="Other">Other</option>
+            </select>
+        </div>
+
+        <!-- Notes -->
+        <div class="form-row">
+            <label for="notes">Additional notes</label>
+            <textarea id="notes" name="notes" rows="4" placeholder="Condition, mileage, location details..."></textarea>
+        </div>
+
+        <!-- Hidden Field -->
+        <input type="hidden" id="source" name="source" value="website" />
+
+        <!-- Actions -->
+        <div class="form-row">
+            <button type="submit" class="btn primary">Send Request</button>
+            <button type="button" id="clearBtn" class="btn ghost">Clear</button>
+        </div>
+
+        <!-- Message -->
+        <div id="form-message" class="form-message" aria-live="polite"></div>
+    </form>
+
+    <!-- JS -->
+    <script src="js/email.js"></script>
+    <script>
+        // Clear button functionality
+        document.getElementById('clearBtn').addEventListener('click', function () {
+            document.getElementById('contact-form').reset();
+            document.getElementById('form-message').textContent = '';
+        });
+    </script>
+</body>
+
+</html>

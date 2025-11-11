@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>We Buy - Cash for Cars!</title>
+
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="brand">
+                <h1>Company Name</h1>
+                <div class="tagline">Cash for Cars!</div>
+            </div>
+            <div class="contact-info">
+                <div class="phone">Call: <a href="tel:+12796751575">279-675-1575</a></div>
+                <div class="location">Sacramento, CA</div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#how">How It Works</a></li>
+            <li><a href="#sell">Sell Your Car</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-inner">
+                <img src="images/1000000286.png" alt="Cash for cars Icon" class="sidebar-icon" />
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#sell">Get an Offer</a></li>
+                    <li><a href="#pickup">Free Pickup</a></li>
+                    <li><a href="#paperwork">Paperwork Help</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+                <div class="sidebar-cta">
+                    <strong>Call now:</strong>
+                    <a href="tel:+12796751575">279-675-1575</a>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content" id="home">
+            <section class="hero">
+                <h2>We Buy Cars in Sacramento — Fast, Fair, Local</h2>
+                <p>Top dollar cash offers, free pickup, and simple paperwork assistance. Get a quote in minutes.</p>
+                <a class="btn" href="#contact">Get an Offer</a>
+                <h2>(279) 675-1575</h2>
+            </section>
+
+            <section id="sell" class="panel">
+                <h3>Sell Your Car / Calculate Offer</h3>
+                <p>Fill out the form below to see your estimated offer.</p>
+            </section>
+
+            <section id="contact" class="panel contact-panel">
+                <h3>Contact / Quote Form</h3>
+                <form id="contact-form" autocomplete="on" novalidate>
+                    <!-- existing form fields -->
+                    <div class="form-row">
+                        <label for="name">Your name</label>
+                        <input id="name" name="name" type="text" required />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" required />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="phone">Phone</label>
+                        <input id="phone" name="phone" type="tel" required />
+                    </div>
+
+                    <fieldset class="form-row">
+                        <legend>Do you have paperwork for the car?</legend>
+                        <label><input type="radio" name="paperwork" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="paperwork" value="no" /> No</label>
+                        <label><input type="radio" name="paperwork" value="not sure" /> Not sure</label>
+                    </fieldset>
+
+                    <fieldset class="form-row">
+                        <legend>Do you have keys for the car?</legend>
+                        <label><input type="radio" name="keys" value="yes" required /> Yes</label>
+                        <label><input type="radio" name="keys" value="no" /> No</label>
+                        <label><input type="radio" name="keys" value="not sure" /> Not sure</label>
+                    </fieldset>
+
+                    <div class="form-row">
+                        <label for="zipcode">What Zipcode are you in?</label>
+                        <input id="zipcode" name="zipcode" type="text" pattern="[0-9]{5}" maxlength="5" required
+                            placeholder="e.g. 95814" />
+                    </div>
+
+                    <div class="form-row">
+                        <label for="vehicle_type">What type of vehicle is it?</label>
+                        <select id="vehicle_type" name="vehicle_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="Car">Car</option>
+                            <option value="Van">Van</option>
+                            <option value="Truck">Truck</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="notes">Additional notes</label>
+                        <textarea id="notes" name="notes" rows="4"
+                            placeholder="Condition, mileage, location details..."></textarea>
+                    </div>
+
+                    <div class="form-row actions">
+                        <button type="button" id="calculateBtn" class="btn primary">Calculate Offer</button>
+                        <button type="button" id="clearBtn" class="btn ghost">Clear</button>
+                    </div>
+
+                    <div id="offer-message" class="form-message" aria-live="polite"></div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>&copy; <span id="year"></span> Company Name - Cash for Cars!</div>
+            <div>Phone: <a href="tel:+12796751575">279-675-1575</a></div>
+        </div>
+    </footer>
+
+    <script>
+        // Update footer year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Calculator logic
+        const calculateBtn = document.getElementById('calculateBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const offerMessage = document.getElementById('offer-message');
+
+        calculateBtn.addEventListener('click', () => {
+            let basePrice = 200; // placeholder base offer
+            const paperwork = document.querySelector('input[name="paperwork"]:checked')?.value;
+            const keys = document.querySelector('input[name="keys"]:checked')?.value;
+            const vehicleType = document.getElementById('vehicle_type').value;
+
+            // Adjust base price based on paperwork
+            if (paperwork === 'yes') basePrice += 50;
+            else if (paperwork === 'not sure') basePrice += 10;
+            else basePrice -= 20;
+
+            // Adjust based on keys
+            if (keys === 'yes') basePrice += 30;
+            else if (keys === 'not sure') basePrice += 5;
+            else basePrice -= 25;
+
+            // Adjust based on vehicle type
+            switch (vehicleType) {
+                case 'Truck': basePrice += 40; break;
+                case 'SUV': basePrice += 30; break;
+                case 'Van': basePrice += 20; break;
+                case 'Motorcycle': basePrice -= 10; break;
+                case 'Other': basePrice -= 20; break;
+            }
+
+            offerMessage.textContent = `Estimated Offer: $${basePrice.toFixed(2)}`;
+        });
+
+        clearBtn.addEventListener('click', () => {
+            document.getElementById('contact-form').reset();
+            offerMessage.textContent = '';
+        });
+    </script>
+</body>
+
+</html>
