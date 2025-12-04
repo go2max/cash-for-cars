@@ -1,5 +1,5 @@
 README.md
-# Company Name - Cash for Cars! (Scaffold)
+# Cash for Cars! (Scaffold)
 
 ## What this contains
 - Frontend: `index.html`, `css/` and `js/` files (single-page layout, sticky header/nav/sidebar)
