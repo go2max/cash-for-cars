@@ -31,3 +31,5 @@ npm run audit:production
 ```
 
 See `RELEASE_CHECKLIST.md`, `DEPLOYMENT.md`, and `SECURITY_ANALYTICS_REPORT.md` before public release.
+
+The CI workflow validates the complete source tree after every branch update.
